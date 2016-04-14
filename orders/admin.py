@@ -2,6 +2,7 @@ import csv
 import datetime
 from django.http import HttpResponse
 from django.contrib import admin
+from django.core.urlresolvers import reverse
 from .models import Order, OrderItem
 
 
@@ -32,10 +33,21 @@ def export_to_csv(modeladmin, request, queryset):
 export_to_csv.short_description = 'Export to CSV'
 
 
+def order_detail(obj):
+    return '<a href="{}">View</a>'.format(reverse('orders:admin_order_detail', args=[obj.id]))
+order_detail.allow_tags = True
+
+
+def order_pdf(obj):
+    return '<a href="{}">PDF</a>'.format(reverse('orders:admin_order_pdf', args=[obj.id]))
+order_pdf.allow_tags = True
+order_pdf.short_description = 'PDF bill'
+
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'last_name', 'email',
                     'address', 'postal_code', 'city', 'paid',
-                    'created', 'updated']
+                    'created', 'updated', order_detail, order_pdf]
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]
     actions = [export_to_csv]
