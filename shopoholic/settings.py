@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'paypal.standard.ipn',
+    'payment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,3 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CART_SESSION_ID = 'cart'
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = 'alexey.tavgen@hotmail.com'
+PAYPAL_TEST = True
