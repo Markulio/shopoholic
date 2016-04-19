@@ -26,5 +26,6 @@ urlpatterns = i18n_patterns(
     url(_(r'^payment/'), include('payment.urls', namespace='payment')),
     url(_(r'^coupons/'), include('coupons.urls', namespace='coupons')),
     url(r'^rosetta/', include('rosetta.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^', include('shop.urls', namespace='shop')),
 )

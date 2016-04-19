@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 15:02+0300\n"
+"POT-Creation-Date: 2016-04-19 20:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,25 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
+#: .\cart\templates\cart\detail.html:74
+#: .\shop\templates\shop\product\detail.html:23
+msgid "People who bought this also bought"
+msgstr ""
+
+#: .\cart\urls.py:8
+msgid "^add/(?P<product_id>\\d+)/$"
+msgstr ""
+
+#: .\cart\urls.py:9
+msgid "^remove/(?P<product_id>\\d+)/$"
+msgstr ""
+
 #: .\coupons\forms.py:6
 msgid "Coupon"
+msgstr ""
+
+#: .\coupons\urls.py:7
+msgid "^apply/$"
 msgstr ""
 
 #: .\payment\urls.py:7
@@ -41,20 +58,15 @@ msgstr ""
 msgid "My shop"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:18
+#: .\shop\templates\shop\base.html:17
+msgid "Language"
+msgstr ""
+
+#: .\shop\templates\shop\base.html:33
 msgid "Your cart"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:20
-#, python-format
-msgid ""
-"\n"
-"                        %(total_items)s item%(total_items_plural)s,\n"
-"                        $%(total_price)s\n"
-"                        "
-msgstr ""
-
-#: .\shop\templates\shop\base.html:26
+#: .\shop\templates\shop\base.html:41
 msgid "Your cart is empty."
 msgstr ""
 
@@ -62,11 +74,11 @@ msgstr ""
 msgid "Add to cart"
 msgstr ""
 
-#: .\shopoholic\settings.py:121
+#: .\shopoholic\settings.py:127
 msgid "English"
 msgstr ""
 
-#: .\shopoholic\settings.py:122
+#: .\shopoholic\settings.py:128
 msgid "Russian"
 msgstr ""
 
