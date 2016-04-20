@@ -11,6 +11,9 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 class Recommender(object):
 
+    def set_removed_product_id(self, id):
+        r.set('removed', id)
+
     def get_product_key(self, id):
         return 'product:{}:purchased_with'.format(id)
 
@@ -25,6 +28,8 @@ class Recommender(object):
 
     def suggest_products_for(self, products, max_results=6):
         product_ids = [p.id for p in products]
+        if not product_ids:
+            product_ids.append(r.get('removed'))
         if len(products) == 1:
             suggestions = r.zrange(self.get_product_key(product_ids[0]),
                                    0, -1, desc=True)[:max_results]
